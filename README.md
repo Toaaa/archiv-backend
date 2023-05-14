@@ -26,7 +26,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - /mnt/archiv/media/:/var/www/media/
+      - /path/to/media/:/var/www/media/
     depends_on:
       - db
   db:
@@ -37,7 +37,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - /archiv/db/postgres:/var/lib/postgresql/data
+      - /path/to/postgres:/var/lib/postgresql/data
 ```
 
 ## 🚪 Reverse Proxy
@@ -63,7 +63,7 @@ location / {
 Required to upgrade major postgres versions.
 
 **Backup**
-`docker exec -t archiv-db pg_dumpall -c -U YOUR_DB_USER > /mnt/archiv/backup/db/dump_$(date +%Y-%m-%d"_"%H_%M_%S).sql`
+`docker exec -t archiv-db pg_dumpall -c -U YOUR_DB_USER > /path/to/backup/dump_$(date +%Y-%m-%d"_"%H_%M_%S).sql`
 
 **Restore**
-`docker exec -i archiv-db psql -d YOUR_DB_NAME -U YOUR_DB_USER < /mnt/archiv/backup/db/dump_<some-date>.sql`
+`docker exec -i archiv-db psql -d YOUR_DB_NAME -U YOUR_DB_USER < /path/to/backup/dump_<some-date>.sql`

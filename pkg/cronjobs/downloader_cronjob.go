@@ -66,6 +66,8 @@ func DownloadVods() (int, error) {
 
 	for _, vod := range vods {
 		// skip vod if created less then 24h ago (only relevant for affiliates)
+		// see: https://www.nbcnews.com/tech/twitch-partners-multiple-platforms-youtube-facebook-rcna44477
+		// and: https://esports.gg/news/streamers/twitch-exclusivity-removal/
 		// if !vod.CreatedAt.Before(time.Now().Add(time.Duration(-24) * time.Hour)) {
 		// 	continue
 		// }
