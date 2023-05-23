@@ -1,5 +1,5 @@
 <div align="center" width="100%">
-    <img src="https://status.schneile.tv/upload/logo1.png?t=1681677870891" width="128"/>
+    <img src="https://i.toaaa.de/i/f9dq9.png" width="128"/>
 </div>
 
 <div align="center" width="100%">
